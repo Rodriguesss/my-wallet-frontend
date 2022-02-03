@@ -16,7 +16,7 @@ export default function MonetaryOperation({ deposit }) {
                 <Title>{`Nova ${operation}`}</Title>
             </MonetaryOperationHeader>
 
-            <Form width="90">
+            <Form width="100">
                 <Input placeholder="Valor" type="number" value={money} setValue={setMoney} />
                 <Input placeholder="Descrição" type="text" value={description} setValue={setDescription} />
 
