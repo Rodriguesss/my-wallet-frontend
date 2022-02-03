@@ -7,6 +7,7 @@ import Container from '../components/generics/Container'
 import Login from "./pages/Index/Login"
 import Register from "./pages/Index/Register"
 import Home from "./pages/Home"
+import MonetaryOperation from "./pages/MonetaryOperation"
 
 export default function App() {
 	return (
@@ -19,6 +20,7 @@ export default function App() {
 						<Route path="/login" element={<Login />} />
 						<Route path="/register" element={<Register />} />
 						<Route path="/home" element={<Home />} />
+						<Route path="/monetary_operation" element={<MonetaryOperation />} />
 					</Routes>
 				</BrowserRouter>
 			</Container>
