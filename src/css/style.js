@@ -11,6 +11,10 @@ const StyledLink = styled(Link)`
 `;
 
 const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     background-color: #8C11BE;
     font-family: 'Raleway', sans-serif;
