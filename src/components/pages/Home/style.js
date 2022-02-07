@@ -88,26 +88,28 @@ const OperationBox = styled.div`
 
 const WalletItem = styled.div`
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+        display: flex;
+        gap: 10px;
+
+        p:nth-child(1) {
+            color: #C6C6C6;
+        }
+
+        p:nth-child(2) {
+            color: #000;
+        }
+    }
     
     span {
-        width: 100%;
         display: flex;
-        justify-content: space-between;
 
         font-size: 16px;
-        margin: 0;
         padding: 0;
-    }
 
-    span:nth-child(1) {
-        color: #C6C6C6;
-    }
-
-    span:nth-child(2) {
-        color: #000;
-    }
-
-    span:nth-child(3) {
         color: ${({operation}) => operation === 'entrada' ? `#6CBE31` : `#C70000`};
     }
 `

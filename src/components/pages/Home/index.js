@@ -49,16 +49,17 @@ export default function Home() {
 			</HomeHeader>
 
 			<DataContainer wallets={wallets}>
-				{ wallets.length === 0 
-				? (<span>Não há registros de entrada ou saída</span>) 
-				: wallets.map(({date, operation, description, price}, index) => (
-					<WalletItem key={index} operation={operation}>
-						{console.log(operation)}
-						<span>{date}</span>
-						<span>{description}</span>
-						<span>{price}</span>
-					</WalletItem>
-				))}
+				{wallets.length === 0
+					? (<span>Não há registros de entrada ou saída</span>)
+					: wallets.map(({ date, operation, description, price }, index) => (
+						<WalletItem key={index} operation={operation}>
+							<div>
+								<p>{date}</p>
+								<p>{description}</p>
+							</div>
+							<span>{price}</span>
+						</WalletItem>
+					))}
 			</DataContainer>
 
 			<ContainerOperationBox>
@@ -67,7 +68,7 @@ export default function Home() {
 						color={'#FFF'}
 						height="25px"
 						width="25px"
-						onClick={() => handleOperation(true) }
+						onClick={() => handleOperation(true)}
 					/>
 					<p>Nova entrada</p>
 				</OperationBox>
@@ -77,7 +78,7 @@ export default function Home() {
 						color={'#FFF'}
 						height="25px"
 						width="25px"
-						onClick={() => handleOperation(false) }
+						onClick={() => handleOperation(false)}
 					/>
 					<p>Nova saída</p>
 				</OperationBox>
