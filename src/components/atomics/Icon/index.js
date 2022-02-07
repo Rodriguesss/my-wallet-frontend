@@ -1,7 +1,7 @@
 import { IconStyle } from "./style";
 
-export default function Icon({ src }) {
+export default function Icon({ src, onClick }) {
     return (
-        <IconStyle src={src} />
+        <IconStyle src={src} onClick={onClick} />
     )
 }

@@ -14,6 +14,9 @@ export function AuthProvider({ children }) {
     }
 
     function logout() {
+        setName("")
+        setDeposit(false)
+        setToken("")
         localStorage.removeItem("token")
     }
 

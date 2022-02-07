@@ -20,7 +20,7 @@ async function register(body) {
   return registerPromise
 }
 
-async function getWallet(token) {
+async function getWallets(token) {
   const config = createConfig(token)
   const promise = await axios.get(`${API_URL}/wallet`, config)
 
@@ -37,7 +37,7 @@ async function postRegistry(body, token) {
 const services = {
   login,
   register,
-  getWallet,
+  getWallets,
   postRegistry
 }
 

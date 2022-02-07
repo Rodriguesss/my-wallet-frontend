@@ -30,7 +30,7 @@ export default function MonetaryOperation() {
 
 			toast.success('Operação realizada com sucesso!')
 		} catch {
-			toast.error('Operação deve conter no minimo 5 caracteres e no maximo 20.')
+			toast.error('A descrição da operação deve conter no minimo 5 caracteres e no maximo 20.')
 		}
 	}
 

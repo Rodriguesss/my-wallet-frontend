@@ -29,8 +29,7 @@ const DataContainer = styled.div`
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: ${({wallets}) => wallets.length === 0 ? `center` : `flex-start`};
     gap: 30px;
     
     padding: 15px 10px 10px 10px;
@@ -87,10 +86,37 @@ const OperationBox = styled.div`
     }
 `
 
+const WalletItem = styled.div`
+    display: flex;
+    
+    span {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+    }
+
+    span:nth-child(1) {
+        color: #C6C6C6;
+    }
+
+    span:nth-child(2) {
+        color: #000;
+    }
+
+    span:nth-child(3) {
+        color: ${({operation}) => operation === 'entrada' ? `#6CBE31` : `#C70000`};
+    }
+`
+
 export {
     HomeStyle,
     HomeHeader,
     DataContainer,
     OperationBox,
-    ContainerOperationBox
+    ContainerOperationBox,
+    WalletItem
 }
