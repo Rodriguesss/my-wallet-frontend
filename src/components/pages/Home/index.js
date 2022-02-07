@@ -5,7 +5,7 @@ import Icon from "../../atomics/Icon"
 
 import { AddCircleOutline, RemoveCircleOutline } from 'react-ionicons'
 
-import { ContainerOperationBox, DataContainer, HomeHeader, HomeStyle, OperationBox, WalletItem } from "./style"
+import { ContainerOperationBox, DataContainer, HomeHeader, HomeStyle, OperationBox, TotalStyle, WalletItem } from "./style"
 import { Images } from '../../../utils/images/images_import'
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
@@ -41,6 +41,21 @@ export default function Home() {
 		toast.success('Você deslogou com sucesso!')
 	}
 
+	function handleTotal() {
+		let total = 0
+		let operation = 'saída' 
+
+		wallets.forEach(({operation, price}) => {
+			operation === 'entrada' && (total += parseFloat(price.replace(",", '.')))
+			operation === 'saída' && (total -= parseFloat(price.replace(",", '.')))
+		})
+
+		total >= 0 && (operation = 'entrada')
+		total = total.toFixed(2).replace(".", ",")
+
+		return { total, operation }
+	  }
+
 	return (
 		<HomeStyle>
 			<HomeHeader>
@@ -60,6 +75,13 @@ export default function Home() {
 							<span>{price}</span>
 						</WalletItem>
 					))}
+
+				<TotalStyle operation={handleTotal().operation}>
+					<div>
+						<p>SALDO</p>
+						<p>{handleTotal().total}</p>
+					</div>
+				</TotalStyle>
 			</DataContainer>
 
 			<ContainerOperationBox>

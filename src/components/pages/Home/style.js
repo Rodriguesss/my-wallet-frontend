@@ -25,6 +25,8 @@ const HomeHeader = styled.div`
 `
 
 const DataContainer = styled.div`
+    position: relative;
+
     height: 70vh;
 
     display: flex;
@@ -114,11 +116,38 @@ const WalletItem = styled.div`
     }
 `
 
+const TotalStyle = styled.div`
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+
+    width: 100%;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+
+        padding: 0 10px;
+    }
+
+    font-size: 17x;
+    font-weight: bold;
+
+    p:nth-child(1) {
+        color: #000000;
+    }
+
+    p:nth-child(2) {
+        color: ${({operation}) => operation === 'entrada' ? `#6CBE31` : `#C70000`};
+    }
+`
+
 export {
     HomeStyle,
     HomeHeader,
     DataContainer,
     OperationBox,
     ContainerOperationBox,
-    WalletItem
+    WalletItem,
+    TotalStyle
 }
