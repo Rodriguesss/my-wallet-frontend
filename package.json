@@ -9,6 +9,7 @@
     "react-ionicons": "^4.2.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "^4.0.3",
+    "react-toastify": "^8.1.1",
     "styled-components": "^5.3.3"
   },
   "scripts": {

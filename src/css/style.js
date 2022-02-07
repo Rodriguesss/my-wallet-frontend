@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
+import 'react-toastify/dist/ReactToastify.css'
+import styled, { createGlobalStyle } from 'styled-components'
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 
 const StyledLink = styled(Link)`
     text-decoration: none;

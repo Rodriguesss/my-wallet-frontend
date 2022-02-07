@@ -1,15 +1,29 @@
-import Title from "../../atomics/Title";
-import Icon from "../../atomics/Icon";
+import useAuth from "../../../hooks/useAuth"
+
+import Title from "../../atomics/Title"
+import Icon from "../../atomics/Icon"
+
 import { AddCircleOutline, RemoveCircleOutline } from 'react-ionicons'
 
-import { ContainerOperationBox, DataContainer, HomeHeader, HomeStyle, OperationBox } from "./style";
+import { ContainerOperationBox, DataContainer, HomeHeader, HomeStyle, OperationBox } from "./style"
 import { Images } from '../../../utils/images/images_import'
+import { useNavigate } from "react-router-dom"
 
 export default function Home() {
+	const { name, setDeposit } = useAuth()
+
+	const navigate = useNavigate()
+
+	async function handleOperation(boolean) {
+		setDeposit(boolean)
+
+		navigate('/monetary_operation')
+	}
+
 	return (
 		<HomeStyle>
 			<HomeHeader>
-				<Title>Olá, Fulano</Title>
+				<Title>Olá, {name}</Title>
 				<Icon src={Images['Logout']} />
 			</HomeHeader>
 
@@ -23,6 +37,7 @@ export default function Home() {
 						color={'#FFF'}
 						height="25px"
 						width="25px"
+						onClick={() => handleOperation(true) }
 					/>
 					<p>Nova entrada</p>
 				</OperationBox>
@@ -32,12 +47,11 @@ export default function Home() {
 						color={'#FFF'}
 						height="25px"
 						width="25px"
+						onClick={() => handleOperation(false) }
 					/>
 					<p>Nova saída</p>
 				</OperationBox>
 			</ContainerOperationBox>
-
-
 		</HomeStyle>
 	)
 }
