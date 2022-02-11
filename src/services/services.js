@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:5000'
+const API_URL = 'https://my-wallet-rodriguesss.herokuapp.com'
 
 function createConfig(token) {
   return { headers: { Authorization: `Bearer ${token}` } }
@@ -8,8 +8,6 @@ function createConfig(token) {
 
 async function login(body) {
   const loginPromise = await axios.post(`${API_URL}/sign-in`, body)
-
-  console.log('~>login ', loginPromise)
 
   return loginPromise
 }

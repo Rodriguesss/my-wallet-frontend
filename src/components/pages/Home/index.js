@@ -33,7 +33,6 @@ export default function Home() {
 	}
 
 	function handleLogout() {
-		console.log('entrei')
 		logout()
 
 		navigate('/')
